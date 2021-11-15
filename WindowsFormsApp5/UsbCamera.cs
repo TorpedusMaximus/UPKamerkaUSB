@@ -116,28 +116,28 @@ namespace WindowsFormsApp5
         }
 
 
-        public Image testMovement(Label movementDetector,Image frame1)
+        public Bitmap testMovement(Label movementDetector,Bitmap frame1)
         {
-            //ImageConverter converter = new ImageConverter();
-            Image frame2;
+            Bitmap frame2;
             int similarity = 0;
             Thread.Sleep(1000);
+            string img1_ref, img2_ref;
 
             SendMessage(windowHandler, WM_CAP_EDIT_COPY, 0, 0);
-            frame2 = Clipboard.GetImage();
-
-            char[] frame1_ref, frame2_ref;
-            //frame1= converter.ConvertTo(frame1, Bitmap);
-            frame1_ref = frame1.ToString().ToCharArray();
-            frame2_ref = frame2.ToString().ToCharArray();
+            frame2 = (Bitmap)Clipboard.GetImage();
 
 
-            for (int i = 0; i < frame1_ref.GetLength(0); i++)
-            { 
-                if (frame1_ref[i] == frame2_ref[i])
+
+            for (int i = 0; i < frame1.Width; i++)
+            {
+                for (int j = 0; j < frame1.Height; j++)
                 {
-                    similarity++;
-                    break;
+                    img1_ref = frame1.GetPixel(i, j).ToString();
+                    img2_ref = frame2.GetPixel(i, j).ToString();
+                    if (img1_ref == img2_ref)
+                    {
+                        similarity++;
+                    }
                 }
             }
 

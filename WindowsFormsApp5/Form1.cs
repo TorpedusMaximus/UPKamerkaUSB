@@ -100,7 +100,7 @@ namespace WindowsFormsApp5
         {
             movementDetector.Text="Brak ruchu";
             movementTest = true;
-            Image frame1 = camera.cameraShot();
+            Bitmap frame1 = (Bitmap)camera.cameraShot();
             while (movementTest)
             {
                 frame1=camera.testMovement(movementDetector,frame1);
