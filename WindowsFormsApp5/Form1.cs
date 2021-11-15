@@ -86,13 +86,6 @@ namespace WindowsFormsApp5
             }
         }
 
-
-
-
-
-
-
-
         private void startRecording_Click(object sender, EventArgs e)
         {
             camera.startRecording();
@@ -105,10 +98,7 @@ namespace WindowsFormsApp5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (movementDetector.Text.Equals("..."))
-            {
-                movementDetector.Text="Brak ruchu";
-            }
+            movementDetector.Text="Brak ruchu";
             movementTest = true;
             Image frame1 = camera.cameraShot();
             while (movementTest)

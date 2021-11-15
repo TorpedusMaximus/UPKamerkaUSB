@@ -118,6 +118,7 @@ namespace WindowsFormsApp5
 
         public Image testMovement(Label movementDetector,Image frame1)
         {
+            //ImageConverter converter = new ImageConverter();
             Image frame2;
             int similarity = 0;
             Thread.Sleep(1000);
@@ -126,7 +127,7 @@ namespace WindowsFormsApp5
             frame2 = Clipboard.GetImage();
 
             char[] frame1_ref, frame2_ref;
-
+            //frame1= converter.ConvertTo(frame1, Bitmap);
             frame1_ref = frame1.ToString().ToCharArray();
             frame2_ref = frame2.ToString().ToCharArray();
 
@@ -141,6 +142,7 @@ namespace WindowsFormsApp5
             }
 
             float similarityRatio = (float)((similarity) / (frame1.Width * frame1.Height));
+            Console.WriteLine(similarityRatio);
 
             if (similarityRatio < 0.90)
             {
@@ -173,6 +175,7 @@ namespace WindowsFormsApp5
         //wstępna ocena 3,5
         //TODO:
         //nagrywanie 0,25
-        //detekcja ruchu 0,55
+        //detekcja ruchu 0,55  może git ?
+
     }
 }
