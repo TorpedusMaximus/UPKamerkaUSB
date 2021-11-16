@@ -115,6 +115,8 @@ namespace WindowsFormsApp5
             return Clipboard.GetImage();
         }
 
+        
+       
 
         public Bitmap testMovement(Label movementDetector,Bitmap frame1)
         {
@@ -141,7 +143,7 @@ namespace WindowsFormsApp5
                 }
             }
 
-            float similarityRatio = (float)((similarity) / (frame1.Width * frame1.Height));
+            float similarityRatio = (float)((similarity)*1.0 / (frame1.Width * frame1.Height));
             Console.WriteLine(similarityRatio);
 
             if (similarityRatio < 0.90)

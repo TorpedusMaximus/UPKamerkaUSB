@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -98,12 +99,20 @@ namespace WindowsFormsApp5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            movementDetector.Text="Brak ruchu";
+            // Create a thread and call a background method   
+            Thread backgroundThread = new Thread(new ThreadStart(startTestMovement));
+            // Start thread  
+            backgroundThread.Start();
+        }
+
+        public void startTestMovement()
+        {
+            movementDetector.Text = "Brak ruchu";
             movementTest = true;
             Bitmap frame1 = (Bitmap)camera.cameraShot();
             while (movementTest)
             {
-                frame1=camera.testMovement(movementDetector,frame1);
+                frame1 = camera.testMovement(movementDetector, frame1);
             }
             movementDetector.Text = "...";
         }
