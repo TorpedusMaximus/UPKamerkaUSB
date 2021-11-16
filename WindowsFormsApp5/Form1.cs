@@ -21,7 +21,7 @@ namespace WindowsFormsApp5
         {
             InitializeComponent();
         }
-
+        
         private void detect_devices_Click(object sender, EventArgs e)
         {
             devicesComboBox.Items.Clear();
@@ -66,14 +66,12 @@ namespace WindowsFormsApp5
         {
             Image shot = camera.cameraShot();
 
-
             SaveFileDialog dialog = new SaveFileDialog();
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 shot.Save(dialog.FileName + ".jpeg", ImageFormat.Jpeg);
             }
         }
-
 
         private void zoomBox_CheckedChanged(object sender, EventArgs e)
         {
@@ -114,5 +112,7 @@ namespace WindowsFormsApp5
         {
             movementTest = false;
         }
+
+       
     }
 }

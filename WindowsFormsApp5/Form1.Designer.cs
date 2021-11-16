@@ -41,7 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.zoomBox = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.movementDetector = new System.Windows.Forms.Label();
@@ -185,15 +184,6 @@
             this.zoomBox.UseVisualStyleBackColor = true;
             this.zoomBox.CheckedChanged += new System.EventHandler(this.zoomBox_CheckedChanged);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(92, 403);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(10, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = ".";
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(33, 327);
@@ -217,11 +207,11 @@
             // movementDetector
             // 
             this.movementDetector.AutoSize = true;
-            this.movementDetector.Location = new System.Drawing.Point(69, 403);
+            this.movementDetector.Location = new System.Drawing.Point(84, 401);
             this.movementDetector.Name = "movementDetector";
-            this.movementDetector.Size = new System.Drawing.Size(130, 13);
+            this.movementDetector.Size = new System.Drawing.Size(112, 13);
             this.movementDetector.TabIndex = 16;
-            this.movementDetector.Text = ".........................................";
+            this.movementDetector.Text = "...................................";
             // 
             // Form1
             // 
@@ -231,7 +221,6 @@
             this.Controls.Add(this.movementDetector);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.zoomBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -269,7 +258,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox zoomBox;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label movementDetector;

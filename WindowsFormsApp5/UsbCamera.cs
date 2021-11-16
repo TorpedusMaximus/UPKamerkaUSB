@@ -112,12 +112,9 @@ namespace WindowsFormsApp5
         public Image cameraShot()
         {
             SendMessage(windowHandler, WM_CAP_EDIT_COPY, 0, 0);
-            Image temp= Clipboard.GetImage();
-            return temp;
+            return Clipboard.GetImage();
         }
 
-        
-       
 
         public void testMovement(Label movementDetector)
         {
@@ -129,7 +126,11 @@ namespace WindowsFormsApp5
             SendMessage(windowHandler, WM_CAP_EDIT_COPY, 0, 0);
             temp= Clipboard.GetImage();
             frame1 = (Bitmap)temp;
-            Thread.Sleep(1000);
+            for(int i = 0; i < 1000000; i+=2)
+            {
+                i--;
+            }
+
             SendMessage(windowHandler, WM_CAP_EDIT_COPY, 0, 0);
             temp = Clipboard.GetImage();
             frame2 = (Bitmap)temp;
