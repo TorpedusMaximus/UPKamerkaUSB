@@ -99,17 +99,15 @@ namespace WindowsFormsApp5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            movementDetector.Text = "Brak ruchu";
+            movementDetector.Text.Insert(0, "Brak ruchu                      ");
             movementTest = true;
-            Image temp;
             int i = 0;
-            temp = camera.cameraShot();
-            Bitmap frame1 = (Bitmap)temp;
             while (i < 5)
             {
-                frame1 = camera.testMovement(movementDetector, frame1);
+                camera.testMovement(movementDetector);
             }
-            movementDetector.Text = "...";
+            
+            movementDetector.Text.Insert(0, ".........................................");
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -112,23 +112,27 @@ namespace WindowsFormsApp5
         public Image cameraShot()
         {
             SendMessage(windowHandler, WM_CAP_EDIT_COPY, 0, 0);
-            return Clipboard.GetImage();
+            Image temp= Clipboard.GetImage();
+            return temp;
         }
 
         
        
 
-        public Bitmap testMovement(Label movementDetector,Bitmap frame1)
+        public void testMovement(Label movementDetector)
         {
-            Bitmap frame2;
+            Bitmap frame1,frame2;
+            Image temp;
             int similarity = 0;
-            Thread.Sleep(1000);
             string img1_ref, img2_ref;
-
+            
             SendMessage(windowHandler, WM_CAP_EDIT_COPY, 0, 0);
-            frame2 = (Bitmap)Clipboard.GetImage();
-
-
+            temp= Clipboard.GetImage();
+            frame1 = (Bitmap)temp;
+            Thread.Sleep(1000);
+            SendMessage(windowHandler, WM_CAP_EDIT_COPY, 0, 0);
+            temp = Clipboard.GetImage();
+            frame2 = (Bitmap)temp;
 
             for (int i = 0; i < frame1.Width; i++)
             {
@@ -148,29 +152,27 @@ namespace WindowsFormsApp5
 
             if (similarityRatio < 0.90)
             {
-                movementDetector.Text="Wykryto ruch";
+                movementDetector.Text.Insert(0, "Wykryto ruch                          ");
             }
             else
             {
-                movementDetector.Text="Brak ruchu";
+                movementDetector.Text.Insert(0, "Brak ruchu                            ");
             }
-
-            return frame2;
         }
 
 
 
         public void startRecording()
         {
-            SendMessage(windowHandler, WM_CAP_FILE_SET_CAPTURE_FILE, 0, 0);
-            SendMessage(windowHandler, WM_CAP_SEQUENCE, 0, 0);
-            SendMessage(windowHandler, WM_CAP_START, 0, 0);
+           // SendMessage(windowHandler, WM_CAP_FILE_SET_CAPTURE_FILE, 0, 0);
+           // SendMessage(windowHandler, WM_CAP_SEQUENCE, 0, 0);
+           // SendMessage(windowHandler, WM_CAP_START, 0, 0);
         }
 
         public void stopRecording()
         {
             //SendMessage(windowHandler, WM_CAP_STOP, 0, 0);
-            SendMessage(windowHandler, WM_CAP_PAL_SAVE, 0, "file.avi");
+           // SendMessage(windowHandler, WM_CAP_PAL_SAVE, 0, "file.avi");
         }
 
         //set capture file

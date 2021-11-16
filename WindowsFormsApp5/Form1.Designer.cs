@@ -217,11 +217,11 @@
             // movementDetector
             // 
             this.movementDetector.AutoSize = true;
-            this.movementDetector.Location = new System.Drawing.Point(108, 403);
+            this.movementDetector.Location = new System.Drawing.Point(69, 403);
             this.movementDetector.Name = "movementDetector";
-            this.movementDetector.Size = new System.Drawing.Size(16, 13);
+            this.movementDetector.Size = new System.Drawing.Size(130, 13);
             this.movementDetector.TabIndex = 16;
-            this.movementDetector.Text = "...";
+            this.movementDetector.Text = ".........................................";
             // 
             // Form1
             // 
