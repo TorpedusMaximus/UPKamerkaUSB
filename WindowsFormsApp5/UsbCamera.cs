@@ -116,24 +116,16 @@ namespace WindowsFormsApp5
         }
 
 
-        public void testMovement(Label movementDetector)
+        public void testMovement(Label movementDetector,PictureBox pictureBoxOutput)
         {
             Bitmap frame1,frame2;
             Image temp;
             int similarity = 0;
             string img1_ref, img2_ref;
-            
-            SendMessage(windowHandler, WM_CAP_EDIT_COPY, 0, 0);
-            temp= Clipboard.GetImage();
-            frame1 = (Bitmap)temp;
-            for(int i = 0; i < 1000000; i+=2)
-            {
-                i--;
-            }
 
-            SendMessage(windowHandler, WM_CAP_EDIT_COPY, 0, 0);
-            temp = Clipboard.GetImage();
-            frame2 = (Bitmap)temp;
+            frame1 = new Bitmap(pictureBoxOutput.Image);
+            Thread.Sleep(50);
+            frame2 = new Bitmap(pictureBoxOutput.Image);
 
             for (int i = 0; i < frame1.Width; i++)
             {
