@@ -107,14 +107,16 @@ namespace WindowsFormsApp5
 
         public void startTestMovement()
         {
-            movementDetector.Text = "Brak ruchu";
+            //movementDetector.Text = "Brak ruchu";
             movementTest = true;
-            Bitmap frame1 = (Bitmap)camera.cameraShot();
+            Image temp;
+            temp= camera.cameraShot();
+            Bitmap frame1 = (Bitmap)temp;
             while (movementTest)
             {
                 frame1 = camera.testMovement(movementDetector, frame1);
             }
-            movementDetector.Text = "...";
+            //movementDetector.Text = "...";
         }
 
         private void button2_Click(object sender, EventArgs e)
