@@ -99,24 +99,17 @@ namespace WindowsFormsApp5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Create a thread and call a background method   
-            Thread backgroundThread = new Thread(new ThreadStart(startTestMovement));
-            // Start thread  
-            backgroundThread.Start();
-        }
-
-        public void startTestMovement()
-        {
-            //movementDetector.Text = "Brak ruchu";
+            movementDetector.Text = "Brak ruchu";
             movementTest = true;
             Image temp;
-            temp= camera.cameraShot();
+            int i = 0;
+            temp = camera.cameraShot();
             Bitmap frame1 = (Bitmap)temp;
-            while (movementTest)
+            while (i < 5)
             {
                 frame1 = camera.testMovement(movementDetector, frame1);
             }
-            //movementDetector.Text = "...";
+            movementDetector.Text = "...";
         }
 
         private void button2_Click(object sender, EventArgs e)
